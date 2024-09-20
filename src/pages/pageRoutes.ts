@@ -4,8 +4,20 @@ import { Layouts } from '@/app/layouts/ELayouts'
 export const pageRoutes: RouteRecordRaw[] = [
   {
     path: '/',
+    redirect: { name: 'newsList' },
+  },
+  {
+    path: '/news',
+    name: 'newsList',
+    component: () => import('@/pages/news/NewsListPage.vue'),
+    meta: {
+      layout: Layouts.default,
+    },
+  },
+  {
+    path: '/news/:id',
     name: 'news',
-    component: () => import('@/pages/NewsPage.vue'),
+    component: () => import('@/pages/news/NewsPage.vue'),
     meta: {
       layout: Layouts.default,
     },

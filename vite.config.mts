@@ -16,5 +16,14 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://static.feed.rbc.ru',
+        changeOrigin: true,
+        rewrite: (patch) => patch.replace(/^\/api/, '')
+      }
+    }
   }
 })
