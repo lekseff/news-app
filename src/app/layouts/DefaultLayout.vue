@@ -1,10 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TheHeader from '@/widgets/header/TheHeader.vue'
+import BaseContainer from '@/shared/ui/BaseContainer.vue'
+</script>
 
 <template>
   <v-main>
-    <v-container>
+    <TheHeader />
+    <BaseContainer>
       <RouterView />
-    </v-container>
+    </BaseContainer>
   </v-main>
 </template>
 

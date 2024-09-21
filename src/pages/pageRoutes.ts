@@ -9,7 +9,7 @@ export const pageRoutes: RouteRecordRaw[] = [
   {
     path: '/news',
     name: 'newsList',
-    component: () => import('@/pages/news/NewsListPage.vue'),
+    component: () => import('@/pages/news/newsList/NewsListPage.vue'),
     meta: {
       layout: Layouts.default,
     },
@@ -17,7 +17,7 @@ export const pageRoutes: RouteRecordRaw[] = [
   {
     path: '/news/:id',
     name: 'news',
-    component: () => import('@/pages/news/NewsPage.vue'),
+    component: () => import('@/pages/news/news/NewsPage.vue'),
     meta: {
       layout: Layouts.default,
     },
