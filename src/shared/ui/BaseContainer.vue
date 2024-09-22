@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<v-container>
+<v-container class="h-100">
   <slot></slot>
 </v-container>
 </template>

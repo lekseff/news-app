@@ -16,16 +16,6 @@ const { xs, smAndUp, mdAndUp } = useDisplay()
 const dialog = ref(false)
 const carousel = ref<number>(0)
 
-// Скрывать управление слайдером
-const hideSliderControl = computed((): boolean => {
-  return props.news.media.length === 1
-})
-
-// Изображения для отображения на странице
-const images = computed((): INewsMedia[] => {
-  return filterImages(props.news.media)
-})
-
 /**
  * Фильтрует список медиа по изображениям
  * @param media
@@ -33,6 +23,16 @@ const images = computed((): INewsMedia[] => {
 function filterImages(media: INewsMedia[]): INewsMedia[] {
   return media.filter((m) => m.type.startsWith('image'))
 }
+
+// Изображения для отображения на странице
+const images = computed((): INewsMedia[] => {
+  return filterImages(props.news.media)
+})
+
+// Скрывать управление слайдером
+const hideSliderControl = computed((): boolean => {
+  return images.value.length === 1
+})
 
 function onOpenModal(index: number) {
   carousel.value = index
@@ -46,7 +46,7 @@ function onOpenModal(index: number) {
     elevation="0"
     :rounded="false"
     :max-width="mdAndUp ? 480 : '100%'"
-    class="float-md-left w-100 mb-4 mr-md-6"
+    class="float-md-left w-100 mb-2 mb-sm-4 mr-md-6"
   >
     <v-carousel
       interval="6000"

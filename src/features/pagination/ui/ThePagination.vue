@@ -8,7 +8,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const currentPage = defineModel<number>('page',{ default: 1 })
+const currentPage = defineModel<number>('page', { default: 1 })
 
 const totalPages = computed(() => {
   return Math.ceil(props.total / props.itemsPerPage)
@@ -16,7 +16,7 @@ const totalPages = computed(() => {
 </script>
 
 <template>
-  <v-pagination v-model="currentPage" :length="totalPages" total-visible="6" />
+  <v-pagination v-model="currentPage" :length="totalPages" total-visible="6" color="primary" />
 </template>
 
 <style scoped></style>

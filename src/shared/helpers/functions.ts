@@ -36,3 +36,14 @@ export function createReleaseDate(date: string) {
   const time = getTimeFromDate(date)
   return `${dateLocale}, ${time}`
 }
+
+// Debounce
+export function debounce(fn: (...args: any[]) => void, delay: number) {
+  let timeoutId: number | null = null
+  return function (that: any, ...args: any[]) {
+    if (timeoutId) clearTimeout(timeoutId)
+    timeoutId = setTimeout(function () {
+      fn.apply(that, args)
+    }, delay)
+  }
+}

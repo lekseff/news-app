@@ -31,7 +31,6 @@ function createNews(element: Element): Omit<INews, 'media'> {
   const time = element.getElementsByTagName('rbc_news:time')[0]?.textContent || ''
   const date = element.getElementsByTagName('rbc_news:date')[0]?.textContent || ''
   const id = element.getElementsByTagName('rbc_news:news_id')[0]?.textContent || ''
-  const updateDate = element.getElementsByTagName('rbc_news:newsModifDate')[0]?.textContent || null
   const fullText = element.getElementsByTagName('rbc_news:full-text')[0]?.textContent || ''
   const author = element.getElementsByTagName('author')[0]?.textContent || null
 
@@ -43,8 +42,8 @@ function createNews(element: Element): Omit<INews, 'media'> {
     author,
     fullText,
     category,
-    updateDate,
     description,
+    date: convertDotDate(date),
     releaseDate: generateFullDate(date, time),
   }
 }

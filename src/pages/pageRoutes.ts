@@ -24,6 +24,6 @@ export const pageRoutes: RouteRecordRaw[] = [
   },
   {
     path: '/:pathMatch(.*)*',
-    redirect: () => ({ name: 'news', params: {} }),
+    redirect: () => ({ name: 'newsList', params: {} }),
   },
 ] as const
