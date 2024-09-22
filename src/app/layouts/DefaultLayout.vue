@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TheHeader from '@/widgets/header/TheHeader.vue'
+import { TheHeader } from '@/widgets/header'
 import BaseContainer from '@/shared/ui/BaseContainer.vue'
 </script>
 

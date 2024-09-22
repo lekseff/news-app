@@ -18,7 +18,7 @@ export const useNewsStore = defineStore('newsStore', () => {
         news.value = sortNewsByDateDesc(newsList)
       }
     } catch (error) {
-      // Обработка ошибки
+      // FIXME: Обработка ошибки
       console.log(error)
     }
   }
